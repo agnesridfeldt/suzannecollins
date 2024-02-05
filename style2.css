@@ -1,0 +1,117 @@
+/* Påverkar allt innehåll på hemsidan. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Påverkar allt innehåll under body-taggen. */
+body {
+    background-color: #3F4D70;
+    margin: 0;
+    font-family: 'Proxima Nova Condensed', Arial, Helvetica, sans-serif;
+}
+
+p {
+    line-height: 1.25;
+}
+
+/* Stilmallar för headern. */
+.header-content {
+    .header-links {
+        background-color: #212d4c;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: end;
+        padding: 10px 15px;
+        padding-bottom: 0;
+    }
+
+    .header-links a {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDFA;
+        text-decoration: none;
+        border-radius: 50%;
+        margin: 0 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .fa {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #3F4D70;
+        margin: 2px 5px;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .header {
+        background-color: #212d4c;
+        display: grid;
+        place-items: center;
+    }
+
+    .header .logo {
+        max-width: 50%;
+        width: 50%;
+        height: auto;
+    }
+
+    .header a {
+        color: #f2f2f2;
+        text-align: center;
+        padding: 10px 15px;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .header h1 {
+        color: #f2f2f2;
+        padding-bottom: 0%;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        background-color: #212d4c;
+        padding: 0 20px;
+        gap: 10px;
+    }
+
+
+    .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        background-color: #212d4c;
+        gap: 10px;
+    }
+    
+    .menu ul li {
+        display: inline-block;
+    }
+
+    .menu a {
+        color: #f2f2f2;
+        text-align: center;
+        padding: 10px 12px;
+        text-decoration: none;
+        white-space: nowrap;
+        font-family: 'Amagro', sans-serif;
+        font-size: 18px;
+    }
+    
+
+    .menu a:hover, .menu a.active {
+        background-color: #3F4D70;
+        color: #f2f2f2;
+    }
+}
+
