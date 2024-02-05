@@ -872,39 +872,49 @@ td {
 
 /* För utsktift av !Interview" */
 @media print {
-    /* Ta bort menyer, länkar och andra navigeringselement */
     .footer, #hamburger-menu, .menu, .header-links {
         display: none !important;
     }
 
-    /* Sätter bakgrund till vit och text till svart för bättre läsbarhet */
+    .logo {
+        display: none !important;  
+    }
+
+    .logo-print {
+        display: block !important;
+        /* Adjust the width and height as needed */
+        width: 500px; /* Example width */
+        height: auto; /* Maintains aspect ratio */
+        margin: 0 auto; /* Centers the logo */    }
+
     *, body {
-        background-color: black !important;
-        color: white !important;
+        background-color: white !important;
+        color: black !important;
     }
 
-    /* Ta bort bakgrundsbilder */
     .video-container {
-        background-image: none !important;
+        background-image: none;
     }
 
-    /* Dölja vissa bilder eller videor om nödvändigt */
     .video-container video {
-        display: none !important;
+        display: none;
     }
 
-    /* Justeringar för att optimera sidlayouten för utskrift */
     .interview-all, .interview-page {
-        padding: 0 !important;
+        padding: 0;
     }
 
     .interview-content {
         grid-template-columns: 1fr !important;
     }
 
-    .questions-answers, .questions, .answer {
-        grid-column: 1 !important;
+    .questions, .answer, h1{
+        color: black !important;
     }
+}
+
+.logo-print {
+    display: none;
 }
 
 .extra-content {
