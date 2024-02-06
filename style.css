@@ -261,7 +261,8 @@ p {
     padding-top: 10px;
 }
 
-.footer p, .footer a {
+.footer p,
+.footer a {
     color: #FFFDFA;
     font-size: 10px;
     text-align: center;
@@ -348,7 +349,8 @@ blockquote p {
 }
 
 /* Stilmallar mobil-använding av index-sidan, quote-delen. */
-@media screen and (max-width: 600px), (pointer:none),
+@media screen and (max-width: 600px),
+(pointer:none),
 (pointer:coarse) {
     .quote {
         display: grid;
@@ -359,7 +361,7 @@ blockquote p {
         grid-column: 1;
     }
 
-    .quote img { 
+    .quote img {
         display: none;
     }
 }
@@ -394,7 +396,9 @@ blockquote p {
     margin: 5px;
 }
 
-input[type="text"], input[type="email"], input[type="submit"] {
+input[type="text"],
+input[type="email"],
+input[type="submit"] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -413,7 +417,8 @@ input[type="submit"]:hover {
     background-color: #364262;
 }
 
-@media (max-width: 600px), (pointer:none),
+@media (max-width: 600px),
+(pointer:none),
 (pointer:coarse) {
     .form-row {
         flex-direction: column;
@@ -510,26 +515,51 @@ input[type="submit"]:hover {
         pointer-events: all;
     }
 
-    @media screen and (max-width: 800px), (pointer:none),
+    @media screen and (max-width: 600px),
+    (pointer:none),
     (pointer:coarse) {
         .book-covers {
-            grid-template-columns: repeat(2, 1fr);
-            /* Ändrar till två kolumner */
-        }
-    }
-
-    @media screen and (max-width: 500px), (pointer:none),
-    (pointer:coarse) {
-        .book-covers {
+            display: grid;
             grid-template-columns: 1fr;
-            /* Ändrar till en kolumn layout */
+            gap: 20px;
+            pointer-events: none;
+        }
+
+        .book-cover {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+    
+
+        .book-cover img {
+            grid-column: 1;
+            width: 100%;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        .synopsis {
+            grid-column: 2;
+            opacity: 1;
+            font-size: 14px;
+        }
+
+        .book-title {
+            grid-column: 2;
+            opacity: 1;
+            align-self: start;
+            text-align: start;
+            
+            margin-top: 0;
+            padding-top: 0;
+            margin-left: 10px;
         }
     }
-
 }
 
 /* Stilmallar för about-sidan. */
 .about-page {
+
     .about-page h1,
     .short-version h1,
     .long-version h1 {
@@ -591,7 +621,8 @@ input[type="submit"]:hover {
         justify-self: center;
     }
 
-    @media (max-width: 900px), (pointer:none),
+    @media (max-width: 900px),
+    (pointer:none),
     (pointer:coarse) {
         .short-version {
             grid-template-columns: 1fr;
@@ -675,7 +706,8 @@ input[type="submit"]:hover {
         height: auto;
     }
 
-    @media (max-width: 600px), (pointer:none),
+    @media (max-width: 600px),
+    (pointer:none),
     (pointer:coarse) {
         .interview-content {
             grid-template-columns: 1fr;
@@ -819,7 +851,8 @@ input[type="submit"]:hover {
     }
 
     /* Media queries - Responsive timeline on screens less than 600px wide */
-    @media screen and (max-width: 600px), (pointer:none),
+    @media screen and (max-width: 600px),
+    (pointer:none),
     (pointer:coarse) {
 
         /* Place the timelime to the left */
@@ -872,22 +905,31 @@ td {
 
 /* För utsktift av !Interview" */
 @media print {
-    .footer, #hamburger-menu, .menu, .header-links {
+
+    .footer,
+    #hamburger-menu,
+    .menu,
+    .header-links {
         display: none !important;
     }
 
     .logo {
-        display: none !important;  
+        display: none !important;
     }
 
     .logo-print {
         display: block !important;
         /* Adjust the width and height as needed */
-        width: 500px; /* Example width */
-        height: auto; /* Maintains aspect ratio */
-        margin: 0 auto; /* Centers the logo */    }
+        width: 500px;
+        /* Example width */
+        height: auto;
+        /* Maintains aspect ratio */
+        margin: 0 auto;
+        /* Centers the logo */
+    }
 
-    *, body {
+    *,
+    body {
         background-color: white !important;
         color: black !important;
     }
@@ -900,7 +942,8 @@ td {
         display: none;
     }
 
-    .interview-all, .interview-page {
+    .interview-all,
+    .interview-page {
         padding: 0;
     }
 
@@ -908,7 +951,9 @@ td {
         grid-template-columns: 1fr !important;
     }
 
-    .questions, .answer, h1{
+    .questions,
+    .answer,
+    h1 {
         color: black !important;
     }
 }
