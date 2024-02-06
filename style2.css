@@ -1,3 +1,7 @@
+.logo, .logo-print {
+    display: none;
+}
+
 /* Påverkar allt innehåll på hemsidan. */
 * {
     box-sizing: border-box;
@@ -278,685 +282,90 @@ p {
     cursor: pointer;
 }
 
-/* Stilmallar för index-sidan. */
-.index-content {
-    .content {
-        display: grid;
-        grid-template-columns: 1fr;
-        background-color: #3F4D70;
-    }
-
-    .slide {
-        background-color: #3F4D70;
-        padding: 10px;
-        height: 200px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .slide {
-        display: grid;
-        grid-template-columns: auto 1fr auto auto;
-        align-items: center;
-        background-image: url('images/background_image.jpeg');
-        background-color: #3F4D70;
-        background-size: cover;
-        background-position: center center;
-        height: 300px;
-        padding: 0 20px;
-        box-sizing: border-box;
-        gap: 20px;
-    }
-}
-
-.quote {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
-    height: 400px;
-    overflow: hidden;
-    background-color: #3F4D70;
-}
-
-blockquote {
-    grid-column: 1;
+h1 {
+    font-family: 'Amagro', sans-serif;
     color: #FFFDFA;
-    font-family: Tahoma, sans-serif;
-    font-size: 30px;
-    margin: 0;
-    padding: 20px;
-    padding-left: 30px;
-}
-
-blockquote h1 {
     font-size: 28px;
 }
 
-blockquote p {
-    font-style: italic;
-    position: relative;
-    padding: 20px;
-}
-
-.quote img {
-    grid-column: 2;
-    width: auto;
-    height: 400px;
-    margin-top: 20px;
-    padding: 0;
-    align-self: center;
-    justify-self: center;
-}
-
-/* Stilmallar mobil-använding av index-sidan, quote-delen. */
-@media screen and (max-width: 600px),
-(pointer:none),
-(pointer:coarse) {
-    .quote {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    blockquote {
-        grid-column: 1;
-    }
-
-    .quote img {
-        display: none;
-    }
-}
-
-/* Stilmallar formulär av index-sidan. */
-.form {
-    width: 95%;
-    margin: 20px auto;
-    padding: 20px;
-    background-image: url(images/background_image.jpeg);
-    border-radius: 8px;
-    box-shadow: 2px 2px 4px #212d4c;
-}
-
-.form h2 {
-    text-align: center;
+.books h2 {
     font-family: 'Amagro', sans-serif;
-    font-size: 24px;
     color: #FFFDFA;
-    margin-bottom: 20px;
-}
-
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.form-group {
-    flex: 1;
-    min-width: 150px;
-    margin: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type="submit"] {
-    background-color: #3F4D70;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #364262;
-}
-
-@media (max-width: 600px),
-(pointer:none),
-(pointer:coarse) {
-    .form-row {
-        flex-direction: column;
-    }
-}
-
-/* Stilmallar för book-sidan. */
-.book-page {
-    .book-content {
-        background-color: #3F4D70;
-    }
-
-    .book-content h1 {
-        font-family: 'Amagro', sans-serif;
-        color: #FFFDFA;
-        padding: 40px;
-        font-size: 28px;
-        text-align: center;
-    }
-
-    .book-covers {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        justify-items: center;
-        padding-bottom: 20px;
-    }
-
-    .book-cover {
-        position: relative;
-        max-width: 100%;
-    }
-
-
-    .book-cover img {
-        max-height: 400px;
-        transition: all 0.3s ease;
-        padding-right: 10px;
-    }
-
-    .book-covers img:hover {
-        opacity: 0.5;
-    }
-
-    .book-title {
-        position: absolute;
-        top: 10px;
-        left: 0;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        color: #FFFDFA;
-        font-size: 24px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        padding: 10px;
-        padding-top: 20px;
-        box-sizing: border-box;
-        pointer-events: none;
-        font-weight: bold;
-    }
-
-    .synopsis {
-        position: absolute;
-        top: 20px;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: left;
-        color: #FFFDFA;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        overflow-y: auto;
-        padding: 10px;
-        box-sizing: border-box;
-        pointer-events: none;
-        font-size: 16px;
-    }
-
-    .book-cover:hover .book-title {
-        opacity: 1;
-    }
-
-    .book-cover:hover img {
-        opacity: 0.3;
-    }
-
-    .book-cover:hover .book-title,
-    .book-cover:hover .synopsis {
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    @media screen and (max-width: 600px),
-    (pointer:none),
-    (pointer:coarse) {
-        .book-covers {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            pointer-events: none;
-        }
-    
-        .book-cover {
-            display: grid;
-            grid-template-rows: auto auto auto; /* Tre rader: titel, bild, sammanfattning */
-            gap: 20px;
-        }
-    
-        .book-cover img {
-            grid-row: 2; /* Placera bilden på andra raden */
-            width: 100%;
-            height: auto;
-        }
-    
-        .book-title {
-            grid-row: 1; /* Placera titeln på första raden */
-            text-align: left;
-            margin-bottom: 20px;
-        }
-    
-        .synopsis {
-            grid-row: 3; /* Placera sammanfattningen på tredje raden */
-            font-size: 14px;
-        }
-    }
-    
-    
-}
-
-/* Stilmallar för about-sidan. */
-.about-page {
-
-    .about-page h1,
-    .short-version h1,
-    .long-version h1 {
-        font-family: 'Amagro', sans-serif;
-        color: #FFFDFA;
-        padding-top: 30px;
-        padding-left: 20px;
-        padding-bottom: 10px;
-        font-size: 28px;
-        margin: 0;
-    }
-
-    .short-version h1 {
-        margin: 0;
-        padding: 0;
-        padding-bottom: 5px;
-    }
-
-    .long-version {
-        background-color: #3F4D70;
-    }
-
-    .about-page p,
-    .long-version p {
-        color: #FFFDFA;
-        font-size: 16px;
-        margin: 0 20px;
-        padding-right: 20px;
-        justify-self: center;
-        padding-bottom: 10px;
-    }
-
-    .short-version p {
-        color: #FFFDFA;
-        margin: 0;
-        padding: 0;
-        justify-self: center;
-        padding-bottom: 10px;
-        padding-right: 10px;
-        font-size: 16px;
-    }
-
-    .short-version {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        background-image: url('images/background_image.jpeg');
-        background-size: cover;
-        padding: 20px;
-        grid-template-rows: auto auto;
-    }
-
-    .short-version img {
-        width: 100%;
-        height: auto;
-        grid-column: 2;
-        grid-row: 1 / -1;
-        padding: 0;
-        align-self: center;
-        justify-self: center;
-    }
-
-    @media (max-width: 900px),
-    (pointer:none),
-    (pointer:coarse) {
-        .short-version {
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto auto;
-        }
-
-        .short-version h1,
-        .short-version p {
-            grid-column: 1;
-        }
-
-        .short-version img {
-            grid-row: 3;
-            grid-column: 1;
-        }
-    }
-}
-
-/* Stilmallar för intewview-sidan. */
-.interview-all {
-    .interview-page {
-        background-color: #3F4D70;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .interview-page h1 {
-        font-family: 'Amagro', sans-serif;
-        color: #FFFDFA;
-        padding-top: 30px;
-        padding-bottom: 10px;
-        font-size: 28px;
-    }
-
-    .interview-content {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 20px;
-    }
-
-    .questions-answers {
-        grid-column: 1;
-    }
-
-    .questions {
-        color: #FFFDFA;
-        font-weight: bold;
-        font-family: 'Amagro', sans-serif;
-        font-size: 16px;
-        padding-bottom: 5px;
-    }
-
-    .answer {
-        color: #FFFDFA;
-        padding-bottom: 15px;
-        padding-right: 7px;
-    }
-
-    .video-container {
-        grid-column: 2;
-        grid-row: 1/-1;
-        background-image: url('images/background_image.jpeg');
-        background-size: cover;
-        padding: 20px;
-        position: sticky;
-        top: 20px;
-        max-width: 500px;
-
-    }
-
-    .video-container video {
-        width: 100%;
-        height: auto;
-        position: sticky;
-        top: 20px;
-        margin-top: 10px;
-    }
-
-    .video-container video {
-        width: 100%;
-        height: auto;
-    }
-
-    @media (max-width: 600px),
-    (pointer:none),
-    (pointer:coarse) {
-        .interview-content {
-            grid-template-columns: 1fr;
-        }
-
-        .video-container {
-            grid-column: 1;
-            grid-row: 1;
-            position: relative;
-            max-width: none;
-            margin-bottom: 20px;
-        }
-
-        .questions-answers {
-            grid-column: 1;
-            grid-row: 2;
-        }
-
-        .interview h1 {
-            text-align: center;
-        }
-    }
-
-}
-
-/* Stilmallar för timeline-sidan. */
-.timeline-content {
-    .timeline-page {
-        background-image: url('images/background_image.jpeg');
-    }
-
-    .timeline-page h1 {
-        font-family: 'Amagro', sans-serif;
-        color: #FFFDFA;
-        padding-top: 30px;
-        padding-bottom: 10px;
-        font-size: 28px;
-        text-align: center;
-    }
-
-    .timeline {
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-
-    }
-
-    .timeline::after {
-        content: '';
-        position: absolute;
-        width: 6px;
-        background-color: #3F4D70;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        margin-left: -3px;
-    }
-
-    /* Container around content */
-    .container {
-        padding: 10px 40px;
-        position: relative;
-        background-color: inherit;
-        width: 50%;
-    }
-
-    /* The circles on the timeline */
-    .container::after {
-        content: '';
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        right: -17px;
-        background-color: #3F4D70;
-        border: 4px solid #3F4D70;
-        top: 15px;
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-    /* Place the container to the left */
-    .left {
-        left: 0;
-    }
-
-    /* Place the container to the right */
-    .right {
-        left: 50%;
-    }
-
-    /* Add arrows to the left container (pointing right) */
-    .left::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 22px;
-        width: 0;
-        z-index: 1;
-        right: 30px;
-        border: medium solid #3F4D70;
-        border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent #3F4D70;
-    }
-
-    /* Add arrows to the right container (pointing left) */
-    .right::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 22px;
-        width: 0;
-        z-index: 1;
-        left: 30px;
-        border: medium solid #3F4D70;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent #3F4D70 transparent transparent;
-    }
-
-    /* Fix the circle for containers on the right side */
-    .right::after {
-        left: -16px;
-    }
-
-    /* The actual content */
-    .content {
-        padding: 20px 30px;
-        background-color: #3F4D70;
-        position: relative;
-        border-radius: 6px;
-    }
-
-    .timeline-page h2 {
-        font-family: 'Amagro', sans-serif;
-        color: #FFFDFA;
-        font-size: 20px;
-    }
-
-    .timeline-page p {
-        color: #FFFDFA;
-        font-size: 16px;
-    }
-
-    /* Media queries - Responsive timeline on screens less than 600px wide */
-    @media screen and (max-width: 600px),
-    (pointer:none),
-    (pointer:coarse) {
-
-        /* Place the timelime to the left */
-        .timeline::after {
-            left: 31px;
-        }
-
-        /* Full-width containers */
-        .container {
-            width: 100%;
-            padding-left: 70px;
-            padding-right: 25px;
-        }
-
-        /* Make sure that all arrows are pointing leftwards */
-        .container::before {
-            left: 60px;
-            border: medium solid #3F4D70;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent #3F4D70 transparent transparent;
-        }
-
-        /* Make sure all circles are at the same spot */
-        .left::after,
-        .right::after {
-            left: 15px;
-        }
-
-        /* Make all right containers behave like the left ones */
-        .right {
-            left: 0%;
-        }
-    }
-
-}
-
-/* Stilmallar för tabbeln. */
-th {
-    background-color: #212d4c;
-    border: 1px solid #ddd;
-    color: white;
-    text-align: left;
-    padding: 10px;
-}
-
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-/* För utsktift av !Interview" */
-@media print {
-
-    .footer,
-    #hamburger-menu,
-    .menu,
-    .header-links {
-        display: none !important;
-    }
-
-    .logo {
-        display: none !important;
-    }
-
-    .logo-print {
-        display: block !important;
-        /* Adjust the width and height as needed */
-        width: 500px;
-        /* Example width */
-        height: auto;
-        /* Maintains aspect ratio */
-        margin: 0 auto;
-        /* Centers the logo */
-    }
-
-    *,
-    body {
-        background-color: white !important;
-        color: black !important;
-    }
-
-    .video-container {
-        background-image: none;
-    }
-
-    .video-container video {
-        display: none;
-    }
-
-    .interview-all,
-    .interview-page {
-        padding: 0;
-    }
-
-    .interview-content {
-        grid-template-columns: 1fr !important;
-    }
-
-    .questions,
-    .answer,
-    h1 {
-        color: black !important;
-    }
-}
-
-.logo-print {
+    font-size: 18px;   
     display: none;
 }
 
-.extra-content {
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    padding-bottom: 20px;
+}
+
+.books {
+    position: relative;
+    max-width: 100%;
+}
+
+.book-info img {
     height: 400px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.book-info p, .books h2 {
+    opacity: 0;
+    position: absolute;
+    color: #FFFDFA;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 14px;
+    left: 20%;
+    top: 20%;
+    transform: translate(-20%, -20%);
+    transition: opacity 0.3s ease;
+}
+
+.books:hover .book-info p, .books:hover h2 {
+    opacity: 1;
+    color: #FFFDFA;
+}
+
+.book-info img:hover {
+    opacity: 0.5;
+}
+
+@media (max-width: 600px), (pointer:none), (pointer:coarse) {
+    .book-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        pointer-events: none;
+    }
+
+    .book-info {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .book h2 {
+        grid-row: 1;
+        grid-column: 1/2;
+        display: block; /* Visa h2-elementen */
+    }
+
+    .book-info img {
+        grid-column: 1;
+        grid-row: 2;
+        max-height: 200px;
+        max-width: auto;
+
+    }
+
+    .book-info p {
+        opacity: 1;
+        grid-column: 2;
+        grid-row: 2;
+        position: relative;
+    }
 }
