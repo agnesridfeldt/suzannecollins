@@ -457,27 +457,37 @@ input[type="submit"]:hover {
     transition: all 0.3s ease;
 }
 
-.book-info p,
-.books h2 {
+.book-info p {
     opacity: 0;
     position: absolute;
     color: #FFFDFA;
     font-family: 'Proxima Nova', Arial, sans-serif;
     font-size: 14px;
-    left: 20%;
-    top: 20%;
-    transform: translate(-20%, -20%);
+    transition: opacity 0.3s ease;
+    margin-top: 80px;
+}
+
+.books h2 {
+    opacity: 0;
+    position: absolute;
+    color: #FFFDFA;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
     transition: opacity 0.3s ease;
 }
 
 .books:hover .book-info p,
 .books:hover h2 {
     opacity: 1;
-    color: #FFFDFA;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .book-info img:hover {
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .book-page h1 {
@@ -523,6 +533,7 @@ input[type="submit"]:hover {
         grid-column: 2;
         grid-row: 2;
         position: relative;
+        margin: 0;
     }
 }
 
