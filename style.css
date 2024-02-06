@@ -521,7 +521,6 @@ input[type="submit"]:hover {
         .book-covers {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
             pointer-events: none;
         }
 
@@ -529,30 +528,30 @@ input[type="submit"]:hover {
             display: grid;
             grid-template-columns: 1fr 2fr;
         }
-    
 
         .book-cover img {
+            display: grid;
             grid-column: 1;
             width: 100%;
             height: auto;
-            margin-left: 20px;
-        }
+            margin-left: 20px;        }
 
-        .synopsis {
+        .book-info {
+            display: grid;
             grid-column: 2;
-            opacity: 1;
-            font-size: 14px;
         }
 
         .book-title {
+            display: grid;
             grid-column: 2;
             opacity: 1;
-            align-self: start;
-            text-align: start;
-            
-            margin-top: 0;
-            padding-top: 0;
-            margin-left: 10px;
+            text-align: left;
+        }
+
+        .synopsis {
+            display: grid;
+            grid-column: 2;
+            opacity: 1;
         }
     }
 }
