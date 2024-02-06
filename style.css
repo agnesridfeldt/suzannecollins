@@ -519,6 +519,9 @@ input[type="submit"]:hover {
     (pointer:none),
     (pointer:coarse) {
         .book-covers {
+            
+        }
+        /*.book-covers {
             display: grid;
             grid-template-columns: 1fr;
             pointer-events: none;
@@ -552,7 +555,7 @@ input[type="submit"]:hover {
             display: grid;
             grid-column: 2;
             opacity: 1;
-        }
+        }*/
     }
 }
 
