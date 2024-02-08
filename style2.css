@@ -1,371 +1,58 @@
-.logo, .logo-print {
-    display: none;
+.form {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    background-image: url('images/background_image.jpeg');
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px #212d4c;
 }
 
-/* Påverkar allt innehåll på hemsidan. */
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-/* Påverkar allt innehåll under body-taggen. */
-body {
-    background-color: #3F4D70;
-    margin: 0;
-    font-family: 'Proxima Nova Condensed', Arial, Helvetica, sans-serif;
-}
-
-p {
-    line-height: 1.25;
-}
-
-/* Stilmallar för headern. */
-.header-content {
-    .header-links {
-        background-color: #212d4c;
-        display: grid;
-        grid-template-columns: auto auto auto;
-        justify-content: end;
-        padding: 10px 15px;
-        padding-bottom: 0;
-    }
-
-    .header-links a {
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        color: #FFFDFA;
-        text-decoration: none;
-        border-radius: 50%;
-        margin: 0 5px;
-        width: 40px;
-        height: 40px;
-    }
-
-    .fa {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #3F4D70;
-        margin: 2px 5px;
-    }
-
-    .fa:hover {
-        opacity: 0.7;
-    }
-
-    .header {
-        background-color: #212d4c;
-        display: grid;
-        place-items: center;
-    }
-
-    .header .logo {
-        max-width: 50%;
-        width: 50%;
-        height: auto;
-    }
-
-    .header a {
-        color: #f2f2f2;
-        text-align: center;
-        padding: 10px 15px;
-        text-decoration: none;
-        white-space: nowrap;
-    }
-
-    .header h1 {
-        color: #f2f2f2;
-        padding-bottom: 0%;
-    }
-
-    .menu {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        background-color: #212d4c;
-        padding: 0 20px;
-        gap: 10px;
-    }
-
-    .menu a {
-        color: #f2f2f2;
-        text-align: center;
-        padding: 10px 12px;
-        text-decoration: none;
-        white-space: nowrap;
-        font-family: 'Amagro', sans-serif;
-        font-size: 18px;
-    }
-
-    .menu a:hover {
-        background-color: #3F4D70;
-        color: #f2f2f2;
-    }
-
-    .menu a.active {
-        background-color: #3F4D70;
-        color: #f2f2f2;
-    }
-
-    /* Mobile */
-    #hamburger-menu {
-        display: none
-    }
-
-    #hamburger-navbar-icon .line {
-        display: block;
-        width: 30px;
-        height: 3px;
-        background-color: #FFFDFA;
-        margin: 5px 0;
-        transition: 0.3s;
-    }
-
-    #hamburger-navbar-icon {
-        display: inline-block;
-        cursor: pointer;
-        padding-right: 5px;
-        /* Add additional styles if needed */
-    }
-
-    .checkbox {
-        opacity: 0;
-    }
-
-    .menu-text {
-        display: none;
-        color: #FFFDFA;
-        font-family: 'Amagro', sans-serif;
-        font-size: 18px;
-        padding-left: 5px;
-    }
-
-    /* Transform the hamburger icon to a cross when checked */
-    .checkbox:checked+#hamburger-navbar-icon #line1 {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .checkbox:checked+#hamburger-navbar-icon #line2 {
-        opacity: 0;
-    }
-
-    .checkbox:checked+#hamburger-navbar-icon #line3 {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    /* Show the menu when the checkbox is checked */
-    .checkbox:checked~#hamburger-navbar {
-        display: block;
-        z-index: 5;
-    }
-
-    @media (max-width: 600px),
-    (pointer:none),
-    (pointer:coarse) {
-        #hamburger-menu {
-            display: flex;
-            position: relative;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #212d4c;
-            padding: 5px;
-            z-index: 10;
-        }
-
-        .menu-text {
-            display: block;
-        }
-
-        #menu-text {
-            text-decoration: none;
-        }
-
-        #menu-text:hover {
-            text-decoration: underline;
-            color: #FFFDFA;
-        }
-
-        #hamburger-navbar {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: #212d4c;
-            display: none;
-            z-index: 15;
-        }
-
-        #hamburger-navbar ul {
-            list-style-type: none;
-            padding: 20px;
-            margin: 0;
-        }
-
-        #hamburger-navbar a {
-            color: #FFFDFA;
-            font-family: 'Amagro', sans-serif;
-            font-size: 14px;
-            text-decoration: none;
-            display: block;
-            padding: 2px;
-        }
-
-        #hamburger-navbar a:hover,
-        #hamburger-navbar a.active {
-            text-decoration: underline;
-            text-decoration-color: #FFFDFA;
-        }
-
-        .menu {
-            display: none;
-        }
-
-        .header {
-            display: grid;
-            grid-template-rows: auto auto;
-            justify-items: center;
-        }
-
-        .header-links {
-            grid-column: 1 / -1;
-            justify-content: center;
-            padding: 10px 0;
-        }
-
-        .header-links a {
-            width: 35px;
-            height: 35px;
-        }
-
-        .fa {
-            width: 35px;
-            height: 35px;
-        }
-
-        .header .logo {
-            max-width: 100%;
-            min-width: 150px;
-            width: auto;
-            height: auto;
-        }
-
-        .header h1 {
-            grid-column: 1 / -1;
-            text-align: center;
-        }
-    }
-}
-
-/* Stilmallar för footern. */
-.footer {
-    background-color: #212d4c;
-    height: 60px;
-    box-sizing: border-box;
-    margin-bottom: 0;
-    padding-top: 10px;
-}
-
-.footer p,
-.footer a {
-    color: #FFFDFA;
-    font-size: 10px;
+.form h2 {
     text-align: center;
-    display: block;
+    font-family: 'Amagro', sans-serif;
+    font-size: 24px;
+    color: #FFFDFA;
+    margin-bottom: 20px;
 }
 
-.footer a {
-    margin: 5px;
+.form form {
+    display: flex;
+    flex-direction: column;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+/* Då det inte finns några <label> element i HTML, är denna stil onödig, men behålls om etiketter läggs till senare */
+.form label {
+    font-family: 'Amagro', sans-serif;
+    color: #FFFDFA;
+    margin: 10px 0 5px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="submit"] { /* Uppdaterat för att exkludera input[type="reset"] */
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px; /* Lägger till marginal för att separera fälten lite */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] { /* Uppdaterat för att exkludera input[type="reset"] */
+    background-color: #3F4D70;
+    color: white;
+    border: none;
     cursor: pointer;
 }
 
-h1 {
-    font-family: 'Amagro', sans-serif;
-    color: #FFFDFA;
-    font-size: 28px;
+input[type="submit"]:hover { /* Uppdaterat för att exkludera input[type="reset"] */
+    background-color: #364262;
 }
 
-.books h2 {
-    font-family: 'Amagro', sans-serif;
-    color: #FFFDFA;
-    font-size: 18px;   
-    display: none;
-}
-
-.book-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-items: center;
-    padding-bottom: 20px;
-}
-
-.books {
-    position: relative;
-    max-width: 100%;
-}
-
-.book-info img {
-    height: 400px;
-    width: auto;
-    transition: all 0.3s ease;
-}
-
-.book-info p, .books h2 {
-    opacity: 0;
-    position: absolute;
-    color: #FFFDFA;
-    font-family: 'Proxima Nova', Arial, sans-serif;
-    font-size: 14px;
-    left: 20%;
-    top: 20%;
-    transform: translate(-20%, -20%);
-    transition: opacity 0.3s ease;
-}
-
-.books:hover .book-info p, .books:hover h2 {
-    opacity: 1;
-    color: #FFFDFA;
-}
-
-.book-info img:hover {
-    opacity: 0.5;
-}
-
-@media (max-width: 600px), (pointer:none), (pointer:coarse) {
-    .book-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        pointer-events: none;
-    }
-
-    .book-info {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: auto auto auto;
-    }
-
-    .book h2 {
-        grid-row: 1;
-        grid-column: 1/2;
-        display: block; /* Visa h2-elementen */
-    }
-
-    .book-info img {
-        grid-column: 1;
-        grid-row: 2;
-        max-height: 200px;
-        max-width: auto;
-
-    }
-
-    .book-info p {
-        opacity: 1;
-        grid-column: 2;
-        grid-row: 2;
-        position: relative;
+@media (max-width: 600px),
+(pointer:none),
+(pointer:coarse) {
+    .form form {
+        flex-direction: column;
     }
 }
