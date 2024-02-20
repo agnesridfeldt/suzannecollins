@@ -38,14 +38,14 @@ Lyser upp ett event på "Timeline"-sidan när man hovrar med muspearen över det
 */
 $(document).ready(function () {
     $('.content').hover(
-        function () { // Mouse enter
+        function () { // Mus på eventet
             $(this).animate({
                 'fontSize': '22px',
                 'backgroundColor': '#65759e',
             }, 400);
         },
 
-        function () {
+        function () { // Mus bort från eventet
             $(this).animate({
                 'fontSize': '20px',
                 'backgroundColor': '#3F4D70',
@@ -87,11 +87,11 @@ $(document).ready(function(){
 
 /*
 Task 5
-
+Möjliggör för att fördlytta videon.
 */
 $(document).ready(function() {
     $("#draggable-video").draggable({
-        containment: ".video-container", /* Begränsar dragbarheten inom denna behållare */
-        scroll: false /* Förhindrar skrollning när du drar */
+        containment: ".video-container", // Begränsar dragbarheten inom videons container
+        scroll: false // Förhindrar skrollning när man drar
     });
 });

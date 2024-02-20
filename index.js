@@ -5,12 +5,12 @@ Funktioner som styr den karusell som finns på "Index"-sidan.
 let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// Knapar för föregående/nästa slide
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// Bild-kontroll
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
